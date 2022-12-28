@@ -5,8 +5,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  int questionNum = 0;
   void answerQuestions() {
     print("I pressed button one");
+    questionNum += 1;
   }
 
   @override
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Text(questions[0]),
+              Text(questions[questionNum]),
               ElevatedButton(
                   onPressed: answerQuestions, child: Text("press me")),
               TextField(
