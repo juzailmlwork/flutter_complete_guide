@@ -5,8 +5,17 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  void answerQuestions() {
+    print("I pressed button one");
+  }
+
   @override
   Widget build(BuildContext context) {
+    var questions = [
+      "what is your name",
+      "where do you live",
+    ];
+
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
@@ -14,9 +23,13 @@ class MyApp extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Text("I am Jusail"),
-              Text("How are you"),
-              ElevatedButton(onPressed: null, child: Text("press me"))
+              Text(questions[0]),
+              ElevatedButton(
+                  onPressed: answerQuestions, child: Text("press me")),
+              TextField(
+                  decoration: const InputDecoration(
+                hintText: 'Enter your email',
+              ))
             ],
           )),
     );
