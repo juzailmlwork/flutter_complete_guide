@@ -4,11 +4,20 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State {
   int questionNum = 0;
   void answerQuestions() {
+    setState(() {
+      questionNum += 1;
+    });
     print("I pressed button one");
-    questionNum += 1;
   }
 
   @override
